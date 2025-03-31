@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:gravity="center"
+    tools:context=".BluetoothControl">
+
+    <!-- Connected Status -->...
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="2dp"
+        app:cardCornerRadius="8dp"
+        android:layout_margin="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tv_connected_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Connected: HC-04"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#004aad"
+                android:gravity="center" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Control Buttons and SeekBar -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_controls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="8dp"
+        android:layout_margin="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="16dp">
+
+            <!-- Control Buttons -->
+            <GridLayout
+                android:id="@+id/grid_controls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="-50dp"
+                android:rowCount="3"
+                android:columnCount="3"
+                android:padding="8dp">
+
+                <ImageButton
+                    android:id="@+id/btn_forward"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:src="@drawable/f_icon"
+                    android:contentDescription="Forward"
+                    android:rotation="270"
+                    android:background="?android:attr/selectableItemBackground"
+                    />
+
+                <ImageButton
+                    android:id="@+id/btn_left"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_row="1"
+                    android:layout_column="0"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:src="@drawable/f_icon"
+                    android:contentDescription="Left"
+                    android:rotation="180"
+                    android:background="?android:attr/selectableItemBackground"
+                    />
+
+                <ImageButton
+                    android:id="@+id/btn_stop"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_row="1"
+                    android:layout_column="1"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:src="@drawable/s_icon"
+                    android:contentDescription="Stop"
+                    android:background="?android:attr/selectableItemBackground"
+                    />
+
+                <ImageButton
+                    android:id="@+id/btn_right"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_row="1"
+                    android:layout_column="2"
+                    android:layout_gravity="left"
+                    android:layout_margin="8dp"
+                    android:src="@drawable/f_icon"
+                    android:contentDescription="Right"
+                    android:background="?android:attr/selectableItemBackground"
+                    />
+
+                <ImageButton
+                    android:id="@+id/btn_backward"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_row="2"
+                    android:layout_column="1"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:src="@drawable/f_icon"
+                    android:contentDescription="Backward"
+                    android:rotation="90"
+                    android:background="?android:attr/selectableItemBackground"
+                    />
+
+            </GridLayout>
+
+            <!-- Speed Control -->
+            <SeekBar
+                android:id="@+id/seekBar_speed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:min="0"
+                android:max="100"
+                android:progress="80"
+                android:splitTrack="false"
+                android:progressTint="#87CEEB"
+                android:progressDrawable="@drawable/cstm_seekbar"
+                android:thumb="@drawable/thumb_icon" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
